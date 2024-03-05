@@ -6,7 +6,7 @@ import PerformanceSection from '../components/PerformanceSection';
 import ToggleSection from '../components/ToggleSection';
 import TrendingCoins from '../components/TrendingCoins';
 
-function CoinPage() {
+const CoinPage = () => {
   return (
     <div className='h-full w-screen bg-slate-200/40'>
       <PageHolder />
@@ -24,6 +24,6 @@ function CoinPage() {
       </div>
     </div>
   );
-}
+};
 
 export default CoinPage;
