@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 interface CoinProps {
   symbol: string;
@@ -9,13 +9,13 @@ interface CoinProps {
 }
 
 function TrendingCoins() {
-  const [coinsData, setCoinsData] = useState<CoinProps[]>([]);
+  const [coinsData, setCoinsData] = useState<CoinProps[]>([]); // Define the type for coinsData
 
   useEffect(() => {
     const fetchCoinData = async () => {
       try {
         const response = await axios.get(
-          'https://api.coingecko.com/api/v3/search/trending'
+          "https://api.coingecko.com/api/v3/search/trending"
         );
         const trendingCoins = response.data.coins.slice(2, 5);
 
@@ -29,10 +29,10 @@ function TrendingCoins() {
           })
         );
 
-        // Update state with formatted data
+        // Updating the state with the formatted data
         setCoinsData(formattedCoinsData);
       } catch (error) {
-        console.error('Error fetching coin data:', error);
+        console.error("Error fetching coin data:", error);
       }
     };
 
@@ -40,11 +40,11 @@ function TrendingCoins() {
   }, []);
 
   return (
-    <div className='w-[427px] h-[225px] bg-white ml-4 mt-4 rounded-lg px-8 pt-5'>
-      <div className='text-2xl font-semibold text-[#0F1629]'>
+    <div className=" h-[225px] bg-white ml-4 mt-4 rounded-lg px-8 pt-5">
+      <div className="text-2xl font-semibold text-[#0F1629]">
         Trending Coins (24h)
       </div>
-      <div className='mt-4 z-0'>
+      <div className="mt-4 z-0">
         {coinsData.map((coin, index) => (
           <Coin
             key={index}
@@ -60,35 +60,36 @@ function TrendingCoins() {
 }
 
 function Coin({ symbol, name, img, changePercentage }: CoinProps) {
-  const isPositiveChange = parseFloat(changePercentage) >= 0; // Parse to float and check if positive
+  // Use CoinProps interface
+  const isPositiveChange = parseFloat(changePercentage) >= 0; // Parse changePercentage to float
 
   return (
-    <div className='flex my-2 justify-between text-center py-1'>
-      <div className='flex pt-1'>
+    <div className="flex my-2 justify-between text-center py-1">
+      <div className="flex pt-1">
         <div>
-          <img src={img} className='w-6 rounded-full' alt='Coin icon' />
+          <img src={img} className="w-6 rounded-full" alt="Coin icon" />
         </div>
-        <div className='text-[#0F1629] ml-2 '>
+        <div className="text-[#0F1629] ml-2 ">
           {name} ({symbol})
         </div>
       </div>
       <div
         className={`flex items-center justify-center rounded-lg p-2 h-8 ml-10 ${
-          isPositiveChange ? 'bg-green-300/20' : 'bg-red-300/20'
+          isPositiveChange ? "bg-green-300/20" : "bg-red-300/20"
         }`}
       >
         <svg
-          viewBox='0 0 100 100'
+          viewBox="0 0 100 100"
           className={`w-4 fill-current ${
-            isPositiveChange ? 'text-green-600' : 'text-red-600'
+            isPositiveChange ? "text-green-600" : "text-red-600"
           }`}
-          style={{ transform: isPositiveChange ? '' : 'rotate(180deg)' }}
+          style={{ transform: isPositiveChange ? "" : "rotate(180deg)" }}
         >
-          <polygon points='0,100 50,0 100,100' />
+          <polygon points="0,100 50,0 100,100" />
         </svg>
         <span
           className={`ml-2 text-sm font-bold ${
-            isPositiveChange ? 'text-green-600' : 'text-red-600'
+            isPositiveChange ? "text-green-600" : "text-red-600"
           }`}
         >
           {changePercentage}%

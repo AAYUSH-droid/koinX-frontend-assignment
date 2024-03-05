@@ -1,6 +1,6 @@
-const AboutBitcoinCard = () => {
+const AboutBitcoin = () => {
   return (
-    <div className='bg-white h-max rounded-lg ml-14 my-4 p-6'>
+    <div className='bg-white mt-4 rounded-lg p-6 h-max'>
       <div className='w-40 h-8 -mt-px font-inter font-[600] text-2xl leading-7'>
         About Bitcoin
       </div>
@@ -52,4 +52,4 @@ const AboutBitcoinCard = () => {
   );
 };
 
-export default AboutBitcoinCard;
+export default AboutBitcoin;

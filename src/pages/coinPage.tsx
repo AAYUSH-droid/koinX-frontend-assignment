@@ -1,30 +1,29 @@
 import AboutBitcoinCard from '../components/AboutBitcoin';
-import CardPromo from '../components/CardPromo';
-import SentimentCard from '../components/SentimentCard';
-import ToggleSection from '../components/ToggleSecion';
+import CradsPromo from '../components/CradsPromo';
+import Crypto from '../components/Crypto';
+import PageHolder from '../components/PageHolder';
+import PerformanceSection from '../components/PerformanceSection';
+import ToggleSection from '../components/ToggleSection';
 import TrendingCoins from '../components/TrendingCoins';
-import Crypto from '../components/crypto';
-import PageHeader from '../components/pageHeader';
 
-const CoinPage = () => {
+function CoinPage() {
   return (
     <div className='h-full w-screen bg-slate-200/40'>
-      <PageHeader />
+      <PageHolder />
       <div className='w-screen flex'>
-        <div className='w-8/12'>
+        <div className='w-8/12 ml-14'>
           <Crypto />
           <ToggleSection />
-          {/* now all the components will come under here */}
-          <SentimentCard />
+          <PerformanceSection />
           <AboutBitcoinCard />
         </div>
-        <div className='4/12'>
-          <CardPromo />
+        <div className='w-4/12 mr-14'>
+          <CradsPromo />
           <TrendingCoins />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default CoinPage;
