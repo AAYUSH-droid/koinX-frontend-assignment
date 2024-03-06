@@ -4,6 +4,7 @@ import Crypto from '../components/Crypto';
 import PageHolder from '../components/PageHolder';
 import PerformanceSection from '../components/PerformanceSection';
 import SentimentSection from '../components/SentimentSection';
+import TeamCard from '../components/TeamCard';
 import ToggleSection from '../components/ToggleSection';
 import Tokenomics from '../components/Tokenomics';
 import TrendingCoins from '../components/TrendingCoins';
@@ -20,6 +21,7 @@ const CoinPage = () => {
           <SentimentSection />
           <AboutBitcoinCard />
           <Tokenomics />
+          <TeamCard />
         </div>
         <div className='w-4/12 mr-14'>
           <CradsPromo />
