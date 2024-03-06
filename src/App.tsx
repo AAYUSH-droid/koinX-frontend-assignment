@@ -1,15 +1,13 @@
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import CoinPage from './pages/CoinPage';
-// fixing deployment
+import Navbar from "./components/Navbar"
+import CoinPage from "./pages/CoinPage"
+
 function App() {
   return (
     <div>
-      <Navbar />
-      <CoinPage />
-      <Footer />
+       <Navbar/>
+       <CoinPage/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
