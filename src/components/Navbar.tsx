@@ -37,7 +37,7 @@ function Navbar() {
       </div>
       {/* Popup menu */}
       {isOpen && (
-        <div className='lg:hidden absolute top-20 right-0 mt-2 mr-2 bg-white rounded-md shadow-md py-5'>
+        <div className='lg:hidden absolute w-full top-[4em] border-zinc-100 z-10 right-0 mt-2 mr-2 bg-white rounded-md shadow-md py-5'>
           <div className='text-lg font-semibold text-[#0F1629] px-4 py-2'>
             <div className='cursor-pointer mb-2'>Crypto Taxes</div>
             <div className='cursor-pointer mb-2'>Free Tools</div>
